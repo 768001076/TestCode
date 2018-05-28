@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="b2b2c">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Cvs/cn_interface/WebContent/WEB-INF/lib/b2b2c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Cvs/cn_interface/WebContent/WEB-INF/lib/jtds-1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Cvs/cn_interface/WebContent/WEB-INF/lib/druid-1.0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
