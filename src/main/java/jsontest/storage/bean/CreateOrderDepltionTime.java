@@ -27,6 +27,10 @@ public class CreateOrderDepltionTime {
 
     private String createOrderFinishTime;//下单结束时间
 
+    private long createOrderStartTimeSel;//下单开始时间查询条件
+
+    private long createOrderFinishTimeSel;//下单结束时间查询条件
+
     private int createOrderType;//下单类型 1代购 2云监控 3托管
 
     private int cycleCount = 0;//循环次数
@@ -63,6 +67,7 @@ public class CreateOrderDepltionTime {
         Date date = new Date();
         createOrderDepletionTime = date.getTime();
         createOrderStartTime = getNowTime(date);
+        this.createOrderStartTimeSel = getNowTimeSel(date);
     }
 
     public String getCreateOrderFinishTime() {
@@ -73,6 +78,7 @@ public class CreateOrderDepltionTime {
         Date date = new Date();
         createOrderDepletionTime = date.getTime() - createOrderDepletionTime;
         createOrderFinishTime = getNowTime(date);
+        createOrderFinishTimeSel = getNowTimeSel(date);
     }
 
     public int getCreateOrderType() {
@@ -95,8 +101,15 @@ public class CreateOrderDepltionTime {
         this.orderID = orderID;
     }
 
-    public List<CycleInfo> getCycleStepsInfo() {
-        return this.cycleStepsInfo;
+    public String getCycleStepsInfo() {
+        String s = null;
+        try {
+            s = JSONArray.toJSONString(this.cycleStepsInfo);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return s;
     }
 
     public void setCycleStepsInfo(String cycleStepsInfoStr) {
@@ -114,6 +127,12 @@ public class CreateOrderDepltionTime {
     private String getNowTime(Date date){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String now = simpleDateFormat.format(date);
+        return now;
+    }
+
+    private long getNowTimeSel(Date date){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmSSS");
+        long now = Long.parseLong(simpleDateFormat.format(date));
         return now;
     }
 
@@ -163,8 +182,13 @@ public class CreateOrderDepltionTime {
 	public void setChannel(int channel) {
 		this.channel = channel;
 	}
-	
-	
-    
-    
+
+    public long getCreateOrderStartTimeSel() {
+        return createOrderStartTimeSel;
+    }
+
+    public long getCreateOrderFinishTimeSel() {
+        return createOrderFinishTimeSel;
+    }
+
 }

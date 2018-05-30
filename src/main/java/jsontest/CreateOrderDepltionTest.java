@@ -1,6 +1,5 @@
 package jsontest;
 
-import com.alibaba.fastjson.JSONArray;
 import jsontest.storage.CreateOrderDepltionStorageRam;
 
 public class CreateOrderDepltionTest {
@@ -12,6 +11,7 @@ public class CreateOrderDepltionTest {
         CreateOrderDepltionStorageRam.setAgentId(12305682,57);
         CreateOrderDepltionStorageRam.setCycleInfo(12305682,cycle1);
         //CreateOrderDepltionStorageRam.setCycleInfo(12305682,cycle2);
+
         System.out.println(CreateOrderDepltionStorageRam.getCreateOrderDepltionInfo(12305682));
     }
 
