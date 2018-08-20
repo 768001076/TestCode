@@ -1,0 +1,28 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="datasource/datasource-config.properties"/>
+    <environments default="local_test">
+        <environment id="local_test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${local_test_driver}"/>
+                <property name="url" value="${local_test_url}"/>
+                <property name="username" value="${local_test_username}"/>
+                <property name="password" value="${local_test_password}"/>
+            </dataSource>
+        </environment>
+        <environment id="local_mytest">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${local_mytest_driver}"/>
+                <property name="url" value="${local_mytest_url}"/>
+                <property name="username" value="${local_mytest_username}"/>
+                <property name="password" value="${local_mytest_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="datasource/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>

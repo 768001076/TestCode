@@ -20,10 +20,20 @@ public class ExceptonTest {
 //            e.printStackTrace();
 //        }
 //        System.out.println("3" + stringBuffer.toString());
+
+
+        // TODO 异常信息NULL
+        try {
+            throw new NumberFormatException();
+        }
+        catch (Exception e) {
+            exceptionTypeTest(e);
+        }
+
     }
 
     public static void exceptionTypeTest(Exception e){
-        System.out.println(e.getClass().getSimpleName());
+        System.out.println(e.getMessage());
     }
 
 }

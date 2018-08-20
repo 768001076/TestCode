@@ -71,7 +71,7 @@ public class DBSafety {
                     73418923, DBSourceEnum.KONGTIE_DB);
             DataTable trainTicketData = DBHelper.GetDataTable("confirmChangeFindTrainpticket @orderId=" + 73418923, DBSourceEnum.KONGTIE_DB);
             DataTable trainStudentInfoData = DBHelper.GetDataTable("confirmChangeFIndTrainstudentinfo @orderId=" + 73418923, DBSourceEnum.KONGTIE_DB);
-            ReflexDBInfoTOObject.setDBDate(trainorder,trainorderData.GetRow().get(0),"trainorderfield.properties");
+            ReflexDBInfoTOObject.setDBDate(trainorder,trainorderData.GetRow().get(0), "trainorderfield.properties");
             List<Trainticket> trainTickets = new ArrayList<Trainticket>();//所有车票信息集合
             List<TrainStudentInfo> trainStudentInfos = new ArrayList<TrainStudentInfo>();//所有学生信息集合
             List<Trainpassenger> trainPassengers = new ArrayList<Trainpassenger>();//所有乘客信息
